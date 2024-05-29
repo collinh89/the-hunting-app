@@ -2,13 +2,15 @@
   <div v-if="isLoading">Loading ...</div>
   <div style="width: 25vw" v-else>
     <pre v-if="isAuthenticated">
+      <div style="display: flex; justify-content: center;">
         <v-img
           class="user-pic mx-auto"
-          :width="150"
           aspect-ratio="4/3"
           cover
           :src="user?.picture"
         ></v-img>
+      </div>
+
         <h3 style="height: 0;" class="profile-title"> {{ user?.name}}</h3>
         <span style="height: 0;" class="profile-title"> {{ user?.email}}</span>
       </pre>
@@ -38,5 +40,6 @@ export default {
 }
 .user-pic {
   border-radius: 50%;
+  max-width: 130px;
 }
 </style>
